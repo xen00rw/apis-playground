@@ -1,0 +1,104 @@
+[
+  {
+    "title": "Bit.ly API",
+    "details": "Bit.ly is a company that provide an service to shorten some urls in other to make it easier to share. And some apps use this on background during sharing links of posts, medias, etc.",
+    "commands": [
+      {"command": "curl -X POST --location 'https://api-ssl.bitly.com/v4/shorten' --header 'Content-Type: application/json' --header 'Authorization: Bearer {{TOKEN}}' --data '{\"long_url\": \"https://example.com\"}'", "desc": "Shorten data"}
+    ],
+    "reference": "https://dev.bitly.com/api-reference/",
+    "pricing": "https://bitly.com/pages/pricing",
+    "serviceType": "Free and Paid"
+  },
+  {
+    "title": "Embed.ly API",
+    "details": "Embed API provides you with a tool to grow by adding media to your site.",
+    "commands": [
+      {"command": "curl --location 'http://api.embedly.com/1/oembed?url=https://youtube.com&key={{API_KEY}}'", "desc": "Get oEmbed data"}
+    ],
+    "reference": "https://docs.embed.ly/reference/embedly-api",
+    "pricing": "https://embed.ly/pricing",
+    "serviceType": "Paid"
+  },
+  {
+    "title": "PostalCode API",
+    "details": "It's a great service to test and validate completely an Address Location.",
+    "commands": [
+      {"command": "curl --location 'https://api.postcodeapi.nu/v3/lookup/6545CA/29' --header 'X-Api-Key: {{API_KEY}}'", "desc": "Fetch postal code details"}
+    ],
+    "reference": "https://www.postcodeapi.nu/docs",
+    "pricing": "https://www.postcodeapi.nu/prijzen/",
+    "serviceType": "Paid"
+  },
+  {
+    "title": "Experian Aperture",
+    "details": "Experian API for home address validation.",
+    "commands": [
+      {"command": "curl --location 'https://api.edq.com/capture/address/v2/search?query={{ADDRESS}}&country=gbr&take=25&auth-token={{API_KEY_UUID}}'", "desc": "Fetch home address"}
+    ],
+    "reference": "https://docs.experianaperture.io/address-validation/experian-address-validation/",
+    "pricing": "https://www.edq.com/pricing/",
+    "serviceType": "Paid"
+  },
+  {
+    "title": "Atlassian Status Pages API",
+    "details": "Status page created for services.",
+    "commands": [
+      {"command": "curl --location 'https://api.statuspage.io/v1/pages/{{PAGE_ID}}/components?api_key={{API_KEY}}'", "desc": "Get status page components"}
+    ],
+    "reference": "https://developer.statuspage.io/",
+    "pricing": "https://www.atlassian.com/software/statuspage/pricing",
+    "serviceType": "Paid"
+  },
+  {
+    "title": "Elastic APM",
+    "details": "It's commonly found in web applications using AWS APM, where the host usually is https://ANY_NAME.apm.AWS-REGION.aws.cloud.es.io It uses an Beaerer token with about 18 characters.",
+    "commands": [
+      {"command": "curl -v -H \"Authorization: Bearer {{BEARER_TOKEN}}\" https://{{ANY_NAME}}.apm.{{AWS_REGION}}.aws.cloud.es.io -sik", "desc": "Fetch APM data"}
+    ],
+    "reference": "https://www.elastic.co/guide/en/observability/current/apm-api-info.html/",
+    "pricing": "N/A",
+    "serviceType": "Paid"
+  },
+  {
+    "title": "DropBox API",
+    "details": "Sharing online folders and setting permissions to files.",
+    "commands": [
+      {"command": "curl -X POST \"https://api.dropboxapi.com/2/users/get_current_account\" --header \"Authorization: Bearer {{ACCESS_TOKEN}}\"", "desc": "Get current account information"},
+      {"command": "curl -X POST https://api.dropboxapi.com/2/sharing/list_folders --header \"Authorization: Bearer {{ACCESS_TOKEN}}\" --header \"Content-Type: application/json\" --data \"{\\\"actions\\\":[],\\\"limit\\\":100}\"", "desc": "List shared folders"},
+      {"command": "curl -X POST https://api.dropboxapi.com/2/sharing/add_folder_member --header \"Authorization: Bearer {{ACCESS_TOKEN}}\" --header \"Content-Type: application/json\" --data \"{\\\"custom_message\\\":\\\"Come on and access the files\\\",\\\"members\\\":[{\\\"access_level\\\":\\\"editor\\\",\\\"member\\\":{\\\".tag\\\":\\\"email\\\",\\\"email\\\":\\\"{{EMAIL_TO_INVITE}}\\\"}},{\\\"access_level\\\":\\\"viewer\\\",\\\"member\\\":{\\\".tag\\\":\\\"dropbox_id\\\",\\\"dropbox_id\\\":\\\"{{DROPBOX_ID_FOUND_ON_FIRST_REQUEST}}\\\"}}],\\\"quiet\\\":false,\\\"shared_folder_id\\\":\\\"{{FOLDER_ID}}\\\"}\"", "desc": "Add member to shared folder"}
+    ],
+    "reference": "https://dropbox.github.io/dropbox-api-v2-explorer/",
+    "pricing": "https://www.dropbox.com/official-teams-page",
+    "serviceType": "Paid"
+  },
+  {
+    "title": "Contentful",
+    "details": "Contentful has 3 kinds of services, the most common to see in clientside is the CDN one, which the application uses an bearer token to retrieve static files like PDFs, XLSX and others.",
+    "commands": [
+      {"command": "curl -v https://cdn.contentful.com/spaces/{{SPACE_NAME}}/entries?access_token={{ACCESS_TOKEN}}", "desc": "List contents"}
+    ],
+    "reference": "https://www.contentful.com/developers/docs/references/content-delivery-api/",
+    "pricing": "https://www.contentful.com/pricing/",
+    "serviceType": "Free and Paid"
+  },
+  {
+    "title": "Blip Chat (Widget)",
+    "details": "Blipchat is a bot chat commonly used. Normally, the key exposed on client-side do not have an direct impact, but if there is no domain restriction set on Blip configuration, it allows you to load the company chat configuration on your website.",
+    "commands": [
+      {"command": "javascript:window.onload=function(){new BlipChat().withAppKey('{{YOUR_BLIP_CHAT_WIDGET_KEY}}').withButton({\"color\":\"#2CC3D5\"}).build();};", "desc": "Add widget"}
+    ],
+    "reference": "https://help.blip.ai/hc/en-us/articles/27989456470679-Activate-Blip-Chat",
+    "pricing": "https://www.blip.ai/en/pricing/",
+    "serviceType": "Paid"
+  },
+  {
+    "title": "Blip Chat (Messaging)",
+    "details": "The same chat bot, but this key should be private and not exposed. It can allow an attacker to send SMS to users phone and emails as he wants. Besides that, allows the attacker to list all conversations avaiable with chatbot and edit some configurations.",
+    "commands": [
+      {"command": "curl --location 'https://http.msging.net/messages' --header 'Authorization: Key {{BLIP_KEY}}' --header 'Content-Type: application/json' --data-raw '{\"id\": \"{{random-guid}}\",\"to\": \"+551122334455@sms.gw.msging.net\",\"type\": \"text/plain\",\"content\": \"Hello!\"}'", "desc": "Message via SMS"}
+    ],
+    "reference": "https://help.blip.ai/hc/en-us/articles/9403675383831-How-to-Send-SMS-via-API",
+    "pricing": "https://www.blip.ai/en/pricing/",
+    "serviceType": "Paid"
+  }
+]
