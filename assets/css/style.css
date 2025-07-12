@@ -19,7 +19,7 @@ p.description {
   text-align: center;
   margin: 15px 20px 30px;
   color: #bbbbbb;
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
 
 p.credits {
@@ -136,4 +136,12 @@ a:hover {
   padding: 6px 14px;
   font-size: 0.9em;
   font-family: monospace;
+}
+
+.corner-logo {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 220px;
+  height: auto;
 }

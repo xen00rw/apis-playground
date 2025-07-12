@@ -100,5 +100,15 @@
     "reference": "https://help.blip.ai/hc/en-us/articles/9403675383831-How-to-Send-SMS-via-API",
     "pricing": "https://www.blip.ai/en/pricing/",
     "serviceType": "Paid"
+  },
+  {
+    "title": "Loqate (Addressy)",
+    "details": "Loqate provides a service to validate addresses, phone numbers and emails. It is commonly used in forms to validate user input. The API key is usually in this format: AA11-AA11-AA11-AA11",
+    "commands": [
+      {"command": "curl -sik 'http://api.addressy.com/EmailValidation/Interactive/Validate/v2.00/csv.ws?Key={{API_KEY}}&Email=test@acme.com&Timeout=5000'", "desc": "Validate email"}
+    ],
+    "reference": "https://www.loqate.com/developers/api/",
+    "pricing": "https://www.loqate.com/en-us/pricing/",
+    "serviceType": "Paid"
   }
 ]
