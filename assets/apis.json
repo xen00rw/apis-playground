@@ -110,5 +110,15 @@
     "reference": "https://www.loqate.com/developers/api/",
     "pricing": "https://www.loqate.com/en-us/pricing/",
     "serviceType": "Paid"
+  },
+  {
+    "title": "Firebase Remote Config (Google)",
+    "details": "Firebase Remote Config is a cloud service that lets you change the behavior and appearance of your app without publishing an update. The AppID format is usually: 1:111111111111:web:aaa11111a11111a1a1aaa1. The project ID is usually in the format: my-project-id-123456 or the second group after the colon in the AppID.",
+    "commands": [
+      {"command": "curl -X POST \"https://firebaseremoteconfig.googleapis.com:443/v1/projects/{{PROJECT_ID}}/namespaces/firebase:fetch\" -H \"X-Goog-Api-Key: {{GOOGLE_API_KEY}}\" -H \"Content-Type: application/json\" -d '{\"appId\": \"{{APP_ID}}\",\"appInstanceId\": \"XD\"}'", "desc": "Fetch remote config data"}
+    ],
+    "reference": "https://firebase.google.com/docs/",
+    "pricing": "N/A",
+    "serviceType": "Free"
   }
 ]
