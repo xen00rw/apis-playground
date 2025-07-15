@@ -113,7 +113,7 @@
   },
   {
     "title": "Firebase Remote Config Mobile",
-    "details": "Firebase Remote Config is a cloud service that lets you change the behavior and appearance of your app without publishing an update. The AppID format is usually: 1:111111111111:android:aaa11111a11111a1a1aaa1. The project ID is usually in the format: my-project-id-123456 or the second group after the colon in the AppID.",
+    "details": "Firebase Remote Config is a cloud service that lets you change the behavior and appearance of your app without publishing an update. The AppID format is usually: 1:111111111111:android:aaa11111a11111a1a1aaa1. The project ID is usually in the format: my-project-id-123456 or the second group after the colon in the AppID.<br><br>Credits to: <a href=\"https://github.com/phor3nsic/\">phor3nsic</a> and <a href=\"https://github.com/brunovais/\">brunovais</a>",
     "commands": [
       {"command": "curl -X POST \"https://firebaseremoteconfig.googleapis.com:443/v1/projects/{{PROJECT_ID}}/namespaces/firebase:fetch\" -H \"X-Goog-Api-Key: {{GOOGLE_API_KEY}}\" -H \"Content-Type: application/json\" -d '{\"appId\": \"{{APP_ID}}\",\"appInstanceId\": \"XD\"}'", "desc": "Fetch remote config data"}
     ],
@@ -123,7 +123,7 @@
   },
   {
     "title": "Firebase Web Config",
-    "details": "Firebase Web Config is a cloud service that lets you change the behavior and appearance of your web app without publishing an update. The AppID format is usually: 1:111111111111:web:aaa11111a11111a1a1aaa1. The project ID is usually in the format: my-project-id-123456 or the second group after the colon in the AppID.",
+    "details": "Firebase Web Config is a cloud service that lets you change the behavior and appearance of your web app without publishing an update. The AppID format is usually: 1:111111111111:web:aaa11111a11111a1a1aaa1. The project ID is usually in the format: my-project-id-123456 or the second group after the colon in the AppID.<br><br>Credits to: <a href=\"https://github.com/phor3nsic/\">phor3nsic</a> and <a href=\"https://github.com/brunovais/\">brunovais</a>",
     "commands": [
       {"command": "curl -sik https://firebase.googleapis.com/v1alpha/projects/-/apps/{{APP_ID}/webConfig -H 'X-Goog-Api-Key: {{GOOGLE_API_KEY}}'", "desc": "Fetch web config data"}
     ],
