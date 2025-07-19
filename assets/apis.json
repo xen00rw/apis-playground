@@ -1,6 +1,6 @@
 [
   {
-    "title": "Bit.ly API",
+    "title": "Bit.ly",
     "details": "Bit.ly is a company that provide an service to shorten some urls in other to make it easier to share. And some apps use this on background during sharing links of posts, medias, etc.",
     "commands": [
       {"command": "curl -X POST --location 'https://api-ssl.bitly.com/v4/shorten' --header 'Content-Type: application/json' --header 'Authorization: Bearer {{TOKEN}}' --data '{\"long_url\": \"https://example.com\"}'", "desc": "Shorten data"}
@@ -10,8 +10,8 @@
     "serviceType": "Free and Paid"
   },
   {
-    "title": "Embed.ly API",
-    "details": "Embed API provides you with a tool to grow by adding media to your site.",
+    "title": "Embed.ly",
+    "details": "Embed provides you with a tool to grow by adding media to your site.",
     "commands": [
       {"command": "curl --location 'http://api.embedly.com/1/oembed?url=https://youtube.com&key={{API_KEY}}'", "desc": "Get oEmbed data"}
     ],
@@ -20,7 +20,7 @@
     "serviceType": "Paid"
   },
   {
-    "title": "PostalCode API",
+    "title": "PostalCode",
     "details": "It's a great service to test and validate completely an Address Location.",
     "commands": [
       {"command": "curl --location 'https://api.postcodeapi.nu/v3/lookup/6545CA/29' --header 'X-Api-Key: {{API_KEY}}'", "desc": "Fetch postal code details"}
@@ -40,7 +40,7 @@
     "serviceType": "Paid"
   },
   {
-    "title": "Atlassian Status Pages API",
+    "title": "Atlassian Status Pages",
     "details": "Status page created for services.",
     "commands": [
       {"command": "curl --location 'https://api.statuspage.io/v1/pages/{{PAGE_ID}}/components?api_key={{API_KEY}}'", "desc": "Get status page components"}
@@ -60,7 +60,7 @@
     "serviceType": "Paid"
   },
   {
-    "title": "DropBox API",
+    "title": "DropBox",
     "details": "Sharing online folders and setting permissions to files.",
     "commands": [
       {"command": "curl -X POST \"https://api.dropboxapi.com/2/users/get_current_account\" --header \"Authorization: Bearer {{ACCESS_TOKEN}}\"", "desc": "Get current account information"},
@@ -113,7 +113,7 @@
   },
   {
     "title": "Firebase Remote Config Mobile",
-    "details": "Firebase Remote Config is a cloud service that lets you change the behavior and appearance of your app without publishing an update. The AppID format is usually: 1:111111111111:android:aaa11111a11111a1a1aaa1. The project ID is usually in the format: my-project-id-123456 or the second group after the colon in the AppID.<br><br>Credits to: <a href=\"https://github.com/phor3nsic/\">phor3nsic</a> and <a href=\"https://github.com/brunovais/\">brunovais</a>",
+    "details": "Firebase Remote Config is a cloud service that lets you change the behavior and appearance of your app without publishing an update. The AppID format is usually: 1:111111111111:android:aaa11111a11111a1a1aaa1. The project ID is usually in the format: my-project-id-123456 or the second group after the colon in the AppID.<br><br>Credits to: <a style=\"color: #008000\" href=\"https://github.com/phor3nsic/\">phor3nsic</a> and <a style=\"color: #008000\" href=\"https://github.com/brunovais/\">brunovais</a>",
     "commands": [
       {"command": "curl -X POST \"https://firebaseremoteconfig.googleapis.com:443/v1/projects/{{PROJECT_ID}}/namespaces/firebase:fetch\" -H \"X-Goog-Api-Key: {{GOOGLE_API_KEY}}\" -H \"Content-Type: application/json\" -d '{\"appId\": \"{{APP_ID}}\",\"appInstanceId\": \"XD\"}'", "desc": "Fetch remote config data"}
     ],
@@ -123,12 +123,35 @@
   },
   {
     "title": "Firebase Web Config",
-    "details": "Firebase Web Config is a cloud service that lets you change the behavior and appearance of your web app without publishing an update. The AppID format is usually: 1:111111111111:web:aaa11111a11111a1a1aaa1. The project ID is usually in the format: my-project-id-123456 or the second group after the colon in the AppID.<br><br>Credits to: <a href=\"https://github.com/phor3nsic/\">phor3nsic</a> and <a href=\"https://github.com/brunovais/\">brunovais</a>",
+    "details": "Firebase Web Config is a cloud service that lets you change the behavior and appearance of your web app without publishing an update. The AppID format is usually: 1:111111111111:web:aaa11111a11111a1a1aaa1. The project ID is usually in the format: my-project-id-123456 or the second group after the colon in the AppID.<br><br>Credits to: <a style=\"color: #008000\" href=\"https://github.com/phor3nsic/\">phor3nsic</a> and <a style=\"color: #008000\" href=\"https://github.com/brunovais/\">brunovais</a>",
     "commands": [
-      {"command": "curl -sik https://firebase.googleapis.com/v1alpha/projects/-/apps/{{APP_ID}/webConfig -H 'X-Goog-Api-Key: {{GOOGLE_API_KEY}}'", "desc": "Fetch web config data"}
+      {"command": "curl -sik https://firebase.googleapis.com/v1alpha/projects/-/apps/{{APP_ID}}/webConfig -H 'X-Goog-Api-Key: {{GOOGLE_API_KEY}}'", "desc": "Fetch web config data"}
     ],
     "reference": "https://firebase.google.com/docs/",
     "pricing": "N/A",
     "serviceType": "Free"
+  },
+  {
+    "title": "Vimeo",
+    "details": "Vimeo is a video hosting platform that allows users to upload, share, and view videos. The API key is usually in the format: 1234567890abcdef1234567890abcdef12345678.",
+    "commands": [
+      {"command": "curl -sk 'https://api.vimeo.com/me/' -H 'Authorization: Bearer {{ACCESS_TOKEN}}'", "desc": "Get user information"},
+      {"command": "curl -sk 'https://api.vimeo.com/me/projects' -H 'Authorization: Bearer {{ACCESS_TOKEN}}'", "desc": "Get user projects"},
+      {"command": "curl -sk 'https://api.vimeo.com/me/projects/{{PROJECT_ID}}' -H 'Authorization: Bearer {{ACCESS_TOKEN}}'", "desc": "Get project details"}
+    ],
+    "reference": "https://developer.vimeo.com/api/reference",
+    "pricing": "https://vimeo.com/upgrade-plan",
+    "serviceType": "Paid"
+  },
+  {
+    "title": "Sentry",
+    "details": "Sentry is an error tracking and performance monitoring platform that helps developers identify and fix issues in their applications. The auth_token is usually a SHA256 string. <br><br>Credits to: <a style=\"color: #008000\" href=\"https://github.com/ThaySolis/\">thay</a>",
+    "commands": [
+      {"command": "curl -sik 'https://sentry.io/api/0/projects/' -H 'Authorization: Bearer {{AUTH_TOKEN}}'", "desc": "List projects"},
+      {"command": "curl -sik 'https://sentry.io/api/0/projects/{{PROJECT_NAME}}/{{SLUG}}/members/' -H 'Authorization: Bearer {{AUTH_TOKEN}}'", "desc": "List project members"}
+    ],
+    "reference": "https://docs.sentry.io/api/",
+    "pricing": "https://sentry.io/pricing/",
+    "serviceType": "Free and Paid"
   }
 ]

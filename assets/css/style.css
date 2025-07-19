@@ -29,6 +29,14 @@ p.credits {
   font-size: 14px;
 }
 
+p.last-updated {
+  max-width: 700px;
+  text-align: center;
+  color: #5f5f5f;
+  font-size: 11px;
+}
+
+
 .card {
   background: #1e1e1e;
   border-radius: 10px;
