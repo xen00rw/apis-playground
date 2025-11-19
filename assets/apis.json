@@ -174,5 +174,15 @@
     "reference": "https://developers.hubspot.com/docs/api-reference/overview",
     "pricing": "https://www.hubspot.com/pricing/marketing/enterprise?term=annual",
     "serviceType": "Free and Paid"
+  },
+  {
+    "title": "NPM Registry",
+    "details": "NPM Registry is a public repository for JavaScript packages. The API allows you to fetch package information, versions, and other metadata. The token is usually in the format: 12345678-1234-1234-1234-1234567890ab.",
+    "commands": [
+      {"command": "curl -H \"Authorization: Bearer {{NPM_TOKEN}}\" \"https://registry.npmjs.org/-/whoami\"", "desc": "Get user information"}
+    ],
+    "reference": "https://docs.npmjs.com/cli/v8/commands/npm-whoami",
+    "pricing": "N/A",
+    "serviceType": "Free"
   }
 ]
