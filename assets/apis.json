@@ -112,20 +112,22 @@
     "serviceType": "Paid"
   },
   {
-    "title": "Firebase Remote Config Mobile",
-    "details": "Firebase Remote Config is a cloud service that lets you change the behavior and appearance of your app without publishing an update. The AppID format is usually: 1:111111111111:android:aaa11111a11111a1a1aaa1. The project ID is usually in the format: my-project-id-123456 or the second group after the colon in the AppID.<br><br>Credits to: <a style=\"color: #008000\" href=\"https://github.com/phor3nsic/\">phor3nsic</a> and <a style=\"color: #008000\" href=\"https://github.com/brunovais/\">brunovais</a>",
+    "title": "Firebase Remote/Web Config",
+    "details": "Firebase Remote/Web Config is a cloud service that lets you change the behavior and appearance of your app without publishing an update. The AppID format is usually: 1:111111111111:android:aaa11111a11111a1a1aaa1. The project ID is usually in the format: my-project-id-123456 or the second group after the colon in the AppID.<br><br>Credits to: <a style=\"color: #008000\" href=\"https://github.com/phor3nsic/\">phor3nsic</a> and <a style=\"color: #008000\" href=\"https://github.com/brunovais/\">brunovais</a>",
     "commands": [
-      {"command": "curl -X POST \"https://firebaseremoteconfig.googleapis.com:443/v1/projects/{{PROJECT_ID}}/namespaces/firebase:fetch\" -H \"X-Goog-Api-Key: {{GOOGLE_API_KEY}}\" -H \"Content-Type: application/json\" -d '{\"appId\": \"{{APP_ID}}\",\"appInstanceId\": \"XD\"}'", "desc": "Fetch remote config data"}
+      {"command": "curl -X POST \"https://firebaseremoteconfig.googleapis.com:443/v1/projects/{{PROJECT_ID}}/namespaces/firebase:fetch\" -H \"X-Goog-Api-Key: {{GOOGLE_API_KEY}}\" -H \"Content-Type: application/json\" -d '{\"appId\": \"{{APP_ID}}\",\"appInstanceId\": \"XD\"}'", "desc": "Fetch remote config data"},
+      {"command": "curl -sik https://firebase.googleapis.com/v1alpha/projects/-/apps/{{APP_ID}}/webConfig -H 'X-Goog-Api-Key: {{GOOGLE_API_KEY}}'", "desc": "Fetch web config data"}
     ],
     "reference": "https://firebase.google.com/docs/",
     "pricing": "N/A",
     "serviceType": "Free"
   },
   {
-    "title": "Firebase Web Config",
-    "details": "Firebase Web Config is a cloud service that lets you change the behavior and appearance of your web app without publishing an update. The AppID format is usually: 1:111111111111:web:aaa11111a11111a1a1aaa1. The project ID is usually in the format: my-project-id-123456 or the second group after the colon in the AppID.<br><br>Credits to: <a style=\"color: #008000\" href=\"https://github.com/phor3nsic/\">phor3nsic</a> and <a style=\"color: #008000\" href=\"https://github.com/brunovais/\">brunovais</a>",
+    "title": "Firebase General",
+    "details": "Firebase is Backend-as-a-Service (BaaS) platform developed by Google that helps developers build web and mobile applications without managing servers.",
     "commands": [
-      {"command": "curl -sik https://firebase.googleapis.com/v1alpha/projects/-/apps/{{APP_ID}}/webConfig -H 'X-Goog-Api-Key: {{GOOGLE_API_KEY}}'", "desc": "Fetch web config data"}
+      {"command": "curl -X POST \"https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key={{GOOGLE_API_KEY}}\" -H \"X-Client-Version: Firefox/JsCore/7.15.5/FirebaseCore-web\" -H \"Content-Type: application/json\" -d '{\"email\":\"test@gmail.com\",\"password\":\"teste\",\"returnSecureToken\":true}'", "desc": "Try to authenticate"},
+      {"command": "curl -X POST \"https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key={{GOOGLE_API_KEY}}\" -H \"X-Client-Version: Firefox/JsCore/7.15.5/FirebaseCore-web\" -H \"Content-Type: application/json\" -d '{\"email\":\"test@gmail.com\",\"password\":\"teste\",\"returnSecureToken\":true}'", "desc": "Register account"}
     ],
     "reference": "https://firebase.google.com/docs/",
     "pricing": "N/A",
@@ -182,6 +184,16 @@
       {"command": "curl -H \"Authorization: Bearer {{NPM_TOKEN}}\" \"https://registry.npmjs.org/-/whoami\"", "desc": "Get user information"}
     ],
     "reference": "https://docs.npmjs.com/cli/v8/commands/npm-whoami",
+    "pricing": "N/A",
+    "serviceType": "Free"
+  },
+  {
+    "title": "Github Personal Token (Legacy)",
+    "details": "Github Personal Access Token (Legacy) is a token used to authenticate with the GitHub API. The token is usually in the format: ghp_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.",
+    "commands": [
+      {"command": "curl -H \"Authorization: Bearer {{GITHUB_TOKEN}}\" https://api.github.com/user", "desc": "Get user information"}
+    ],
+    "reference": "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens",
     "pricing": "N/A",
     "serviceType": "Free"
   }
