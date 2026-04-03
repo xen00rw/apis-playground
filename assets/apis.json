@@ -1,0 +1,221 @@
+[
+  {
+    "title": "Bit.ly",
+    "details": "Bit.ly is a company that provide an service to shorten some urls in other to make it easier to share. And some apps use this on background during sharing links of posts, medias, etc.",
+    "commands": [
+      {"command": "curl -X POST --location 'https://api-ssl.bitly.com/v4/shorten' --header 'Content-Type: application/json' --header 'Authorization: Bearer {{TOKEN}}' --data '{\"long_url\": \"https://example.com\"}'", "desc": "Shorten data"}
+    ],
+    "reference": "https://dev.bitly.com/api-reference/",
+    "pricing": "https://bitly.com/pages/pricing",
+    "serviceType": "Free and Paid"
+  },
+  {
+    "title": "Embed.ly",
+    "details": "Embed provides you with a tool to grow by adding media to your site.",
+    "commands": [
+      {"command": "curl --location 'http://api.embedly.com/1/oembed?url=https://youtube.com&key={{API_KEY}}'", "desc": "Get oEmbed data"}
+    ],
+    "reference": "https://docs.embed.ly/reference/embedly-api",
+    "pricing": "https://embed.ly/pricing",
+    "serviceType": "Paid"
+  },
+  {
+    "title": "PostalCode",
+    "details": "It's a great service to test and validate completely an Address Location.",
+    "commands": [
+      {"command": "curl --location 'https://api.postcodeapi.nu/v3/lookup/6545CA/29' --header 'X-Api-Key: {{API_KEY}}'", "desc": "Fetch postal code details"}
+    ],
+    "reference": "https://www.postcodeapi.nu/docs",
+    "pricing": "https://www.postcodeapi.nu/prijzen/",
+    "serviceType": "Paid"
+  },
+  {
+    "title": "Experian Aperture",
+    "details": "Experian API for home address validation.",
+    "commands": [
+      {"command": "curl --location 'https://api.edq.com/capture/address/v2/search?query={{ADDRESS}}&country=gbr&take=25&auth-token={{API_KEY_UUID}}'", "desc": "Fetch home address"}
+    ],
+    "reference": "https://docs.experianaperture.io/address-validation/experian-address-validation/",
+    "pricing": "https://www.edq.com/pricing/",
+    "serviceType": "Paid"
+  },
+  {
+    "title": "Atlassian Status Pages",
+    "details": "Status page created for services.",
+    "commands": [
+      {"command": "curl --location 'https://api.statuspage.io/v1/pages/{{PAGE_ID}}/components?api_key={{API_KEY}}'", "desc": "Get status page components"}
+    ],
+    "reference": "https://developer.statuspage.io/",
+    "pricing": "https://www.atlassian.com/software/statuspage/pricing",
+    "serviceType": "Paid"
+  },
+  {
+    "title": "Elastic APM",
+    "details": "It's commonly found in web applications using AWS APM, where the host usually is https://ANY_NAME.apm.AWS-REGION.aws.cloud.es.io It uses an Beaerer token with about 18 characters.",
+    "commands": [
+      {"command": "curl -v -H \"Authorization: Bearer {{BEARER_TOKEN}}\" https://{{ANY_NAME}}.apm.{{AWS_REGION}}.aws.cloud.es.io -sik", "desc": "Fetch APM data"}
+    ],
+    "reference": "https://www.elastic.co/guide/en/observability/current/apm-api-info.html/",
+    "pricing": "N/A",
+    "serviceType": "Paid"
+  },
+  {
+    "title": "DropBox",
+    "details": "Sharing online folders and setting permissions to files.",
+    "commands": [
+      {"command": "curl -X POST \"https://api.dropboxapi.com/2/users/get_current_account\" --header \"Authorization: Bearer {{ACCESS_TOKEN}}\"", "desc": "Get current account information"},
+      {"command": "curl -X POST https://api.dropboxapi.com/2/sharing/list_folders --header \"Authorization: Bearer {{ACCESS_TOKEN}}\" --header \"Content-Type: application/json\" --data \"{\\\"actions\\\":[],\\\"limit\\\":100}\"", "desc": "List shared folders"},
+      {"command": "curl -X POST https://api.dropboxapi.com/2/sharing/add_folder_member --header \"Authorization: Bearer {{ACCESS_TOKEN}}\" --header \"Content-Type: application/json\" --data \"{\\\"custom_message\\\":\\\"Come on and access the files\\\",\\\"members\\\":[{\\\"access_level\\\":\\\"editor\\\",\\\"member\\\":{\\\".tag\\\":\\\"email\\\",\\\"email\\\":\\\"{{EMAIL_TO_INVITE}}\\\"}},{\\\"access_level\\\":\\\"viewer\\\",\\\"member\\\":{\\\".tag\\\":\\\"dropbox_id\\\",\\\"dropbox_id\\\":\\\"{{DROPBOX_ID_FOUND_ON_FIRST_REQUEST}}\\\"}}],\\\"quiet\\\":false,\\\"shared_folder_id\\\":\\\"{{FOLDER_ID}}\\\"}\"", "desc": "Add member to shared folder"}
+    ],
+    "reference": "https://dropbox.github.io/dropbox-api-v2-explorer/",
+    "pricing": "https://www.dropbox.com/official-teams-page",
+    "serviceType": "Paid"
+  },
+  {
+    "title": "Contentful",
+    "details": "Contentful has 3 kinds of services, the most common to see in clientside is the CDN one, which the application uses an bearer token to retrieve static files like PDFs, XLSX and others.",
+    "commands": [
+      {"command": "curl -v https://cdn.contentful.com/spaces/{{SPACE_NAME}}/entries?access_token={{ACCESS_TOKEN}}", "desc": "List contents"}
+    ],
+    "reference": "https://www.contentful.com/developers/docs/references/content-delivery-api/",
+    "pricing": "https://www.contentful.com/pricing/",
+    "serviceType": "Free and Paid"
+  },
+  {
+    "title": "Blip Chat (Widget)",
+    "details": "Blipchat is a bot chat commonly used. Normally, the key exposed on client-side do not have an direct impact, but if there is no domain restriction set on Blip configuration, it allows you to load the company chat configuration on your website.",
+    "commands": [
+      {"command": "javascript:window.onload=function(){new BlipChat().withAppKey('{{YOUR_BLIP_CHAT_WIDGET_KEY}}').withButton({\"color\":\"#2CC3D5\"}).build();};", "desc": "Add widget"}
+    ],
+    "reference": "https://help.blip.ai/hc/en-us/articles/27989456470679-Activate-Blip-Chat",
+    "pricing": "https://www.blip.ai/en/pricing/",
+    "serviceType": "Paid"
+  },
+  {
+    "title": "Blip Chat (Messaging)",
+    "details": "The same chat bot, but this key should be private and not exposed. It can allow an attacker to send SMS to users phone and emails as he wants. Besides that, allows the attacker to list all conversations avaiable with chatbot and edit some configurations.",
+    "commands": [
+      {"command": "curl --location 'https://http.msging.net/messages' --header 'Authorization: Key {{BLIP_KEY}}' --header 'Content-Type: application/json' --data-raw '{\"id\": \"{{random-guid}}\",\"to\": \"+551122334455@sms.gw.msging.net\",\"type\": \"text/plain\",\"content\": \"Hello!\"}'", "desc": "Message via SMS"}
+    ],
+    "reference": "https://help.blip.ai/hc/en-us/articles/9403675383831-How-to-Send-SMS-via-API",
+    "pricing": "https://www.blip.ai/en/pricing/",
+    "serviceType": "Paid"
+  },
+  {
+    "title": "Loqate (Addressy)",
+    "details": "Loqate provides a service to validate addresses, phone numbers and emails. It is commonly used in forms to validate user input. The API key is usually in this format: AA11-AA11-AA11-AA11",
+    "commands": [
+      {"command": "curl -sik 'http://api.addressy.com/EmailValidation/Interactive/Validate/v2.00/csv.ws?Key={{API_KEY}}&Email=test@acme.com&Timeout=5000'", "desc": "Validate email"}
+    ],
+    "reference": "https://www.loqate.com/developers/api/",
+    "pricing": "https://www.loqate.com/en-us/pricing/",
+    "serviceType": "Paid"
+  },
+  {
+    "title": "Firebase Remote/Web Config",
+    "details": "Firebase Remote/Web Config is a cloud service that lets you change the behavior and appearance of your app without publishing an update. The AppID format is usually: 1:111111111111:android:aaa11111a11111a1a1aaa1. The project ID is usually in the format: my-project-id-123456 or the second group after the colon in the AppID.<br><br>Credits to: <a style=\"color: #008000\" href=\"https://github.com/phor3nsic/\">phor3nsic</a> and <a style=\"color: #008000\" href=\"https://github.com/brunovais/\">brunovais</a>",
+    "commands": [
+      {"command": "curl -X POST \"https://firebaseremoteconfig.googleapis.com:443/v1/projects/{{PROJECT_ID}}/namespaces/firebase:fetch\" -H \"X-Goog-Api-Key: {{GOOGLE_API_KEY}}\" -H \"Content-Type: application/json\" -d '{\"appId\": \"{{APP_ID}}\",\"appInstanceId\": \"XD\"}'", "desc": "Fetch remote config data"},
+      {"command": "curl -sik https://firebase.googleapis.com/v1alpha/projects/-/apps/{{APP_ID}}/webConfig -H 'X-Goog-Api-Key: {{GOOGLE_API_KEY}}'", "desc": "Fetch web config data"}
+    ],
+    "reference": "https://firebase.google.com/docs/",
+    "pricing": "N/A",
+    "serviceType": "Free"
+  },
+  {
+    "title": "Firebase General",
+    "details": "Firebase is Backend-as-a-Service (BaaS) platform developed by Google that helps developers build web and mobile applications without managing servers.",
+    "commands": [
+      {"command": "curl -X POST \"https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key={{GOOGLE_API_KEY}}\" -H \"X-Client-Version: Firefox/JsCore/7.15.5/FirebaseCore-web\" -H \"Content-Type: application/json\" -d '{\"email\":\"test@gmail.com\",\"password\":\"teste\",\"returnSecureToken\":true}'", "desc": "Try to authenticate"},
+      {"command": "curl -X POST \"https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key={{GOOGLE_API_KEY}}\" -H \"X-Client-Version: Firefox/JsCore/7.15.5/FirebaseCore-web\" -H \"Content-Type: application/json\" -d '{\"email\":\"test@gmail.com\",\"password\":\"teste\",\"returnSecureToken\":true}'", "desc": "Register account"}
+    ],
+    "reference": "https://firebase.google.com/docs/",
+    "pricing": "N/A",
+    "serviceType": "Free"
+  },
+  {
+    "title": "Google Gemini",
+    "details": "Google Gemini is an AI model developed by Google for natural language processing and generation.",
+    "commands": [
+      {"command": "curl -X POST \"https://generativelanguage.googleapis.com/v1/models?key={{GOOGLE_API_KEY}}\"", "desc": "List models"},
+      {"command": "curl -X POST \"https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key={{GOOGLE_API_KEY}}\" -H \"Content-Type: application/json\" -d '{\"contents\":[{\"parts\":[{\"text\":\"Write a poem about the ocean.\"}]}]}'", "desc": "Generate a poem"}
+    ],
+    "reference": "https://ai.google.dev/api?hl=pt-br",
+    "pricing": "N/A",
+    "serviceType": "Paid"
+  },
+  {
+    "title": "Vimeo",
+    "details": "Vimeo is a video hosting platform that allows users to upload, share, and view videos. The API key is usually in the format: 1234567890abcdef1234567890abcdef12345678.",
+    "commands": [
+      {"command": "curl -sk 'https://api.vimeo.com/me/' -H 'Authorization: Bearer {{ACCESS_TOKEN}}'", "desc": "Get user information"},
+      {"command": "curl -sk 'https://api.vimeo.com/me/projects' -H 'Authorization: Bearer {{ACCESS_TOKEN}}'", "desc": "Get user projects"},
+      {"command": "curl -sk 'https://api.vimeo.com/me/projects/{{PROJECT_ID}}' -H 'Authorization: Bearer {{ACCESS_TOKEN}}'", "desc": "Get project details"}
+    ],
+    "reference": "https://developer.vimeo.com/api/reference",
+    "pricing": "https://vimeo.com/upgrade-plan",
+    "serviceType": "Paid"
+  },
+  {
+    "title": "Sentry",
+    "details": "Sentry is an error tracking and performance monitoring platform that helps developers identify and fix issues in their applications. The auth_token is usually a SHA256 string. <br><br>Credits to: <a style=\"color: #008000\" href=\"https://github.com/ThaySolis/\">thay</a>",
+    "commands": [
+      {"command": "curl -sik 'https://sentry.io/api/0/projects/' -H 'Authorization: Bearer {{AUTH_TOKEN}}'", "desc": "List projects"},
+      {"command": "curl -sik 'https://sentry.io/api/0/projects/{{PROJECT_NAME}}/{{SLUG}}/members/' -H 'Authorization: Bearer {{AUTH_TOKEN}}'", "desc": "List project members"}
+    ],
+    "reference": "https://docs.sentry.io/api/",
+    "pricing": "https://sentry.io/pricing/",
+    "serviceType": "Free and Paid"
+  },
+  {
+    "title": "HubSpot",
+    "details": "Hubspot is a popular CRM and marketing platform. Example of the API Private Token: pat-na1-12345678-1234-1234-1234-1234567890ab.<br><br>Credits to: <a style=\"color: #008000\" href=\"https://github.com/phor3nsic/\">phor3nsic</a>",
+    "commands": [
+      {"command": "for url in \"https://api.hubapi.com/integrations/v1/me\" \\\n\"https://api.hubapi.com/crm/v3/objects/contacts\" \\\n\"https://api.hubapi.com/crm/v3/objects/companies\" \\\n\"https://api.hubapi.com/crm/v3/objects/deals\" \\\n\"https://api.hubapi.com/crm/v3/objects/tickets\" \\\n\"https://api.hubapi.com/crm/v3/owners\" \\\n\"https://api.hubapi.com/properties/v1/contacts/properties\" \\\n\"https://api.hubapi.com/crm/v3/objects/contacts/search\" \\\n\"https://api.hubapi.com/contacts/v1/lists\" \\\n\"https://api.hubapi.com/crm-pipelines/v1/pipelines/deals\" \\\n\"https://api.hubapi.com/email/public/v1/events\"; \ndo curl -sik \"$url\" \\\n-H \"Authorization: Bearer {{HUBSPOT_PRIVATE_TOKEN}}\" \\\n-H \"Accept: application/json\" && echo -e '\\n======'; \ndone", "desc": "All HubSpot paths in one command."},
+      {"command": "curl -sik 'https://api.hubapi.com/integrations/v1/me' -H 'Authorization: Bearer {{HUBSPOT_PRIVATE_TOKEN}}' -H 'Accept: application/json'", "desc": "Get account information"},
+      {"command": "curl -sik 'https://api.hubapi.com/crm/v3/objects/contacts' -H 'Authorization: Bearer {{HUBSPOT_PRIVATE_TOKEN}}' -H 'Accept: application/json'", "desc": "Get contacts information"},
+      {"command": "curl -sik 'https://api.hubapi.com/crm/v3/objects/companies' -H 'Authorization: Bearer {{HUBSPOT_PRIVATE_TOKEN}}' -H 'Accept: application/json'", "desc": "Get companies information"},
+      {"command": "curl -sik 'https://api.hubapi.com/crm/v3/objects/deals' -H 'Authorization: Bearer {{HUBSPOT_PRIVATE_TOKEN}}' -H 'Accept: application/json'", "desc": "Get deals information"},
+      {"command": "curl -sik 'https://api.hubapi.com/crm/v3/objects/tickets' -H 'Authorization: Bearer {{HUBSPOT_PRIVATE_TOKEN}}' -H 'Accept: application/json'", "desc": "Get tickets information"},
+      {"command": "curl -sik 'https://api.hubapi.com/crm/v3/owners' -H 'Authorization: Bearer {{HUBSPOT_PRIVATE_TOKEN}}' -H 'Accept: application/json'", "desc": "Get owners information"},
+      {"command": "curl -sik 'https://api.hubapi.com/properties/v1/contacts/properties' -H 'Authorization: Bearer {{HUBSPOT_PRIVATE_TOKEN}}' -H 'Accept: application/json'", "desc": "Get contact properties"},
+      {"command": "curl -sik 'https://api.hubapi.com/crm/v3/objects/contacts/search' -H 'Authorization: Bearer {{HUBSPOT_PRIVATE_TOKEN}}' -H 'Accept: application/json'", "desc": "Search contacts"},
+      {"command": "curl -sik 'https://api.hubapi.com/contacts/v1/lists' -H 'Authorization: Bearer {{HUBSPOT_PRIVATE_TOKEN}}' -H 'Accept: application/json'", "desc": "Get contact lists"},
+      {"command": "curl -sik 'https://api.hubapi.com/crm-pipelines/v1/pipelines/deals' -H 'Authorization: Bearer {{HUBSPOT_PRIVATE_TOKEN}}' -H 'Accept: application/json'", "desc": "Get pipelines deals information"},
+      {"command": "curl -sik 'https://api.hubapi.com/email/public/v1/events' -H 'Authorization: Bearer {{HUBSPOT_PRIVATE_TOKEN}}' -H 'Accept: application/json'", "desc": "Get email events"}
+    ],
+    "reference": "https://developers.hubspot.com/docs/api-reference/overview",
+    "pricing": "https://www.hubspot.com/pricing/marketing/enterprise?term=annual",
+    "serviceType": "Free and Paid"
+  },
+  {
+    "title": "NPM Registry",
+    "details": "NPM Registry is a public repository for JavaScript packages. The API allows you to fetch package information, versions, and other metadata. The token is usually in the format: 12345678-1234-1234-1234-1234567890ab.",
+    "commands": [
+      {"command": "curl -H \"Authorization: Bearer {{NPM_TOKEN}}\" \"https://registry.npmjs.org/-/whoami\"", "desc": "Get user information"}
+    ],
+    "reference": "https://docs.npmjs.com/cli/v8/commands/npm-whoami",
+    "pricing": "N/A",
+    "serviceType": "Free"
+  },
+  {
+    "title": "Github Personal Token (Legacy)",
+    "details": "Github Personal Access Token (Legacy) is a token used to authenticate with the GitHub API. The token is usually in the format: ghp_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.",
+    "commands": [
+      {"command": "curl -H \"Authorization: Bearer {{GITHUB_TOKEN}}\" https://api.github.com/user", "desc": "Get user information"}
+    ],
+    "reference": "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens",
+    "pricing": "N/A",
+    "serviceType": "Free"
+  },
+  {
+    "title": "Amplitude",
+    "details": "Amplitude is a product analytics platform. The token is usually in the format: amplitude_api_key.",
+    "commands": [
+      {"command": "curl -X POST https://api2.amplitude.com/2/httpapi -H \"Content-Type: application/json\" -d '{\"api_key\": \"{{API-KEY}}\",\"events\": [{\"user_id\": \"test-user\",\"event_type\": \"test_event\"}]}'"}
+    ],
+    "reference": "https://amplitude.com/docs/apis/analytics/http-v2",
+    "pricing": "https://amplitude.com/pt-br/pricing",
+    "serviceType": "Free and Paid" 
+  }
+]
