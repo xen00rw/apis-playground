@@ -8,27 +8,103 @@
     <meta property="og:image" content="https://apis-playground.xen00rw.me/assets/images/skull.png">
     <meta property="og:type" content="website">
     <title>APIs Playground</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
   </head>
-  <body>
-    <h1>APIs Playground</h1>
-    <p class="description">
-      This application offers several API services with straightforward examples for testing communication. Use the provided requests to quickly try out and verify each API endpoint.    
-    <br><br>
-    Useful for bugbounting and learning about different APIs and possible impacts associated with the compromised API keys.
-    </p>
-    <br>
-    <p class="credits">
-      With love, <b>Xen00rw ♥</b>
-    </p>
-    <p class="last-updated">
-      Last updated: <b>03/April/2026</b>
-    </p>
-    <div class="api-tags" id="api-tags"></div>
-    <img src="assets/images/skull.png" alt="skull" class="corner-logo">
-    <div id="api-container"></div>
+<body>
+  <main class="page-shell">
+    <section class="hero">
+      <div class="hero-layout">
+        <div class="hero-image-wrap">
+          <img class="hero-skull" src="assets/images/skull.png" alt="Skull icon">
+        </div>
+        <div class="hero-copy">
+          <h1>APIs Playground</h1>
+          <p class="hero-text">
+            This application offers several API services with straightforward examples for testing communication. Use the provided requests to quickly try out and verify each API endpoint.
+          </p>
+          <p class="hero-text">
+            Useful for bugbounting and learning about different APIs and possible impacts associated with the compromised API keys.
+          </p>
+          <p class="hero-signoff">With love, Xen0Orw ♥</p>
+          <p class="hero-updated">Last updated: 05/April/2026</p>
+        </div>
+      </div>
 
-    <script type="text/javascript" src="assets/js/app.js"></script>
-  </body>
+      <label class="search-field" for="searchInput">
+        <span>Search registered APIs</span>
+        <input
+          id="searchInput"
+          type="search"
+          placeholder="E.g. Stripe, GitHub, OpenAI..."
+          autocomplete="off"
+        >
+      </label>
+
+      <div id="apiChips" class="api-chips" aria-label="Registered APIs"></div>
+    </section>
+
+    <section class="results-header">
+      <div>
+        <p class="section-label">Catalog</p>
+        <h2>Available APIs</h2>
+      </div>
+      <p id="resultsCount" class="results-count" aria-live="polite"></p>
+    </section>
+
+    <section id="cardsContainer" class="cards-grid" aria-live="polite"></section>
+  </main>
+
+  <footer class="page-footer">
+    <p>Totally client-side, dont worry.</p>
+  </footer>
+
+  <template id="apiCardTemplate">
+    <article class="api-card">
+      <div class="card-top">
+        <div>
+          <h3 class="api-name"></h3>
+        </div>
+        <span class="billing-badge"></span>
+      </div>
+
+      <p class="api-description"></p>
+
+      <div class="card-divider"></div>
+
+      <div class="api-meta">
+        <p><strong>Reference:</strong> <a class="details-link" target="_blank" rel="noreferrer"></a></p>
+        <p><strong>Pricing:</strong> <a class="pricing-link" target="_blank" rel="noreferrer"></a></p>
+        <p><strong>Service Type:</strong> <span class="service-type"></span></p>
+      </div>
+
+      <div class="card-divider"></div>
+
+      <div class="commands-list"></div>
+    </article>
+  </template>
+
+  <template id="commandTemplate">
+    <section class="command-block">
+      <p class="command-name"></p>
+      <p class="command-description"></p>
+      <div class="code-wrapper">
+        <pre><code class="command-code"></code></pre>
+        <button type="button" class="copy-button" aria-label="Copy command" title="Copy command">
+          <span class="copy-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+              <path d="M9 3.75A2.25 2.25 0 0 1 11.25 1.5h1.5A2.25 2.25 0 0 1 15 3.75h2.25A2.25 2.25 0 0 1 19.5 6v12a2.25 2.25 0 0 1-2.25 2.25h-10.5A2.25 2.25 0 0 1 4.5 18V6A2.25 2.25 0 0 1 6.75 3.75H9Zm2.25-.75a.75.75 0 0 0-.75.75V4.5h3v-.75a.75.75 0 0 0-.75-.75h-1.5Zm-4.5 3a.75.75 0 0 0-.75.75v12c0 .414.336.75.75.75h10.5a.75.75 0 0 0 .75-.75V6.75a.75.75 0 0 0-.75-.75H6.75Z" fill="currentColor"/>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </section>
+  </template>
+
+  <template id="commandDividerTemplate">
+    <div class="card-divider"></div>
+  </template>
+
+  <script src="assets/js/app.js" defer></script>
+</body>
 </html>
