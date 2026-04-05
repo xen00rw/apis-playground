@@ -134,7 +134,7 @@ const renderCards = (items) => {
     card.id = `api-${slugify(api.name)}`;
 
     fragment.querySelector(".api-name").textContent = api.name;
-    fragment.querySelector(".api-description").textContent = api.description || "";
+    fragment.querySelector(".api-description").innerHTML = api.description || "";
 
     const badge = fragment.querySelector(".billing-badge");
     badge.textContent = api.billing;
