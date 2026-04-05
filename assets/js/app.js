@@ -206,7 +206,7 @@ const applySearch = () => {
 
 const loadApis = async () => {
   try {
-    const response = await fetch("./assets/apis.json");
+    const response = await fetch("assets/apis.json");
     if (!response.ok) {
       throw new Error("Could not load the API catalog.");
     }
