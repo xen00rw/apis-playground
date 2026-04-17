@@ -548,7 +548,7 @@
         {
             "name": "Transloadit API",
             "billing": "Free and Paid",
-            "description": "Transloadit API allows you to upload files and process them with a wide range of transformations.",
+            "description": "Transloadit API allows you to upload files and process them with a wide range of transformations. Credits to: <a href=\"https://github.com/ThaySolis\" target=\"_blank\">ThaySolis</a>",
             "detailsUrl": "https://transloadit.com/docs/api/",
             "pricingUrl": "https://transloadit.com/pricing/",
             "tags": [
@@ -565,10 +565,27 @@
                 "template": "curl -X POST \"https://api2.transloadit.com/assemblies\" -F \"params={\\\"auth\\\":{\\\"key\\\":\\\"{{TRANSLOADIT_API_KEY}}\\\"},\\\"steps\\\":{\\\":original\\\":{\\\"robot\\\":\\\"/upload/handle\\\"}}}\" -F \"file=@poc.txt\""
                 }
             ]
+        },
+        {
+            "name": "Segment",
+            "billing": "Free and Paid",
+            "description": "Segment is a customer data platform that helps you collect, clean, and control your customer data. Credits to: <a href=\"https://github.com/ThaySolis\" target=\"_blank\">ThaySolis</a>",
+            "detailsUrl": "https://docs.segmentapis.com/",
+            "pricingUrl": "https://www.twilio.com/en-us",
+            "tags": [
+                "segment",
+                "free",
+                "and",
+                "paid"
+            ],
+            "commands": [
+                {
+                "title": "Track an event",
+                "method": "POST",
+                "description": "Send an track event to Segment. API key goes like an username but no password in Basic Auth.",
+                "template": "curl -X POST \"https://api.segment.io/v1/track\" -u \"{{SEGMENT_WRITE_KEY}}:\" -H \"Content-Type: application/json\" -d \u0027{\"userId\": \"vultus\",\"event\": \"TEST_EVENT\"}\u0027"
+                }
+            ]
         }
     ]
 }
-
-
-
-
