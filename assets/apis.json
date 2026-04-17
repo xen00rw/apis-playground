@@ -170,7 +170,7 @@
                     "title": "List contents",
                     "method": "GET",
                     "description": "",
-                    "template": "curl -v https://cdn.contentful.com/spaces/{{SPACE_NAME}}/entries?access_token={{ACCESS_TOKEN}}"
+                    "template": "curl -v \u0027https://cdn.contentful.com/spaces/{{SPACE_NAME}}/entries?access_token={{ACCESS_TOKEN}}\u0027"
                 }
             ]
         },
@@ -280,13 +280,13 @@
                     "title": "Try to authenticate",
                     "method": "POST",
                     "description": "",
-                    "template": "curl -X POST \"https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key={{GOOGLE_API_KEY}}\" -H \"X-Client-Version: Firefox/JsCore/7.15.5/FirebaseCore-web\" -H \"Content-Type: application/json\" -d \u0027{\"email\":\"test@gmail.com\",\"password\":\"teste\",\"returnSecureToken\":true}\u0027"
+                    "template": "curl -X POST \u0027https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key={{GOOGLE_API_KEY}}\u0027 -H \"X-Client-Version: Firefox/JsCore/7.15.5/FirebaseCore-web\" -H \"Content-Type: application/json\" -d \u0027{\"email\":\"test@gmail.com\",\"password\":\"teste\",\"returnSecureToken\":true}\u0027"
                 },
                 {
                     "title": "Register account",
                     "method": "POST",
                     "description": "",
-                    "template": "curl -X POST \"https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key={{GOOGLE_API_KEY}}\" -H \"X-Client-Version: Firefox/JsCore/7.15.5/FirebaseCore-web\" -H \"Content-Type: application/json\" -d \u0027{\"email\":\"test@gmail.com\",\"password\":\"teste\",\"returnSecureToken\":true}\u0027"
+                    "template": "curl -X POST \u0027https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key={{GOOGLE_API_KEY}}\u0027 -H \"X-Client-Version: Firefox/JsCore/7.15.5/FirebaseCore-web\" -H \"Content-Type: application/json\" -d \u0027{\"email\":\"test@gmail.com\",\"password\":\"teste\",\"returnSecureToken\":true}\u0027"
                 }
             ]
         },
@@ -306,13 +306,13 @@
                     "title": "List models",
                     "method": "POST",
                     "description": "",
-                    "template": "curl -X POST \"https://generativelanguage.googleapis.com/v1/models?key={{GOOGLE_API_KEY}}\""
+                    "template": "curl -X POST \u0027https://generativelanguage.googleapis.com/v1/models?key={{GOOGLE_API_KEY}}\u0027"
                 },
                 {
                     "title": "Generate a poem",
                     "method": "POST",
                     "description": "",
-                    "template": "curl -X POST \"https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key={{GOOGLE_API_KEY}}\" -H \"Content-Type: application/json\" -d \u0027{\"contents\":[{\"parts\":[{\"text\":\"Write a poem about the ocean.\"}]}]}\u0027"
+                    "template": "curl -X POST \u0027https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key={{GOOGLE_API_KEY}}\u0027 -H \"Content-Type: application/json\" -d \u0027{\"contents\":[{\"parts\":[{\"text\":\"Write a poem about the ocean.\"}]}]}\u0027"
                 }
             ]
         },
@@ -517,7 +517,7 @@
             ],
             "commands": [
                 {
-                    "title": "Run command",
+                    "title": "Send an event",
                     "method": "POST",
                     "description": "",
                     "template": "curl -X POST https://api2.amplitude.com/2/httpapi -H \"Content-Type: application/json\" -d \u0027{\"api_key\": \"{{API-KEY}}\",\"events\": [{\"user_id\": \"test-user\",\"event_type\": \"test_event\"}]}\u0027"
@@ -544,6 +544,31 @@
                     "template": "curl -sk \"https://api.getacute.io/org/get\" -H \"Api-Org-Token: {{ACUTE_API_TOKEN}}\" -H \"Origin: https://widget.getacute.io\" -H \"Api-User-Token: undefined\""
                 }
             ]
+        },
+        {
+            "name": "Transloadit API",
+            "billing": "Free and Paid",
+            "description": "Transloadit API allows you to upload files and process them with a wide range of transformations.",
+            "detailsUrl": "https://transloadit.com/docs/api/",
+            "pricingUrl": "https://transloadit.com/pricing/",
+            "tags": [
+                "transloadit",
+                "free",
+                "and",
+                "paid"
+            ],
+            "commands": [
+                {
+                "title": "Upload attempt",
+                "method": "POST",
+                "description": "Upload an file",
+                "template": "curl -X POST \"https://api2.transloadit.com/assemblies\" -F \"params={\\\"auth\\\":{\\\"key\\\":\\\"{{TRANSLOADIT_API_KEY}}\\\"},\\\"steps\\\":{\\\":original\\\":{\\\"robot\\\":\\\"/upload/handle\\\"}}}\" -F \"file=@poc.txt\""
+                }
+            ]
         }
     ]
 }
+
+
+
+
