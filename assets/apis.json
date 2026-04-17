@@ -583,7 +583,7 @@
                 "title": "Track an event",
                 "method": "POST",
                 "description": "Send an track event to Segment. API key goes like an username but no password in Basic Auth.",
-                "template": "curl -X POST \"https://api.segment.io/v1/track\" -u \"{{SEGMENT_WRITE_KEY}}:\" -H \"Content-Type: application/json\" -d \u0027{\"userId\": \"vultus\",\"event\": \"TEST_EVENT\"}\u0027"
+                "template": "curl -X POST \"https://api.segment.io/v1/track\" -u \"{{SEGMENT_WRITE_KEY}}:\" -H \"Content-Type: application/json\" -d \u0027{\"userId\": \"hacked\",\"event\": \"TEST_EVENT\"}\u0027"
                 }
             ]
         }
