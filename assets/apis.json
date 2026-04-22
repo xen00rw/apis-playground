@@ -586,6 +586,27 @@
                 "template": "curl -X POST \"https://api.segment.io/v1/track\" -u \"{{SEGMENT_WRITE_KEY}}:\" -H \"Content-Type: application/json\" -d \u0027{\"userId\": \"hacked\",\"event\": \"TEST_EVENT\"}\u0027"
                 }
             ]
+        },
+        {
+            "name": "VTEX",
+            "billing": "Free and Paid",
+            "description": "VTEX is a cloud-based e-commerce platform that helps you build and manage your online store.",
+            "detailsUrl": "https://developers.vtex.com/",
+            "pricingUrl": "https://vtex.com/pricing/",
+            "tags": [
+                "vtex",
+                "free",
+                "and",
+                "paid"
+            ],
+            "commands": [
+                {
+                "title": "List data",
+                "method": "GET",
+                "description": "Retrieve data from VTEX data entities. The account name is usually the first part of the store URL, and the acronym is a short identifier for the data entity.",
+                "template": "curl -X GET \"https://{{ACCOUNT}}.vtexcommercestable.com.br/api/dataentities/{{ACRONYM}}/search?_where=(createdIn%20between%201000-11-05%20AND%202030-11-13)&_fields=dataEntityId\""
+                }
+            ]
         }
     ]
 }
