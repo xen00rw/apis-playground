@@ -56,7 +56,7 @@
   </main>
 
   <footer class="page-footer">
-    <p>Totally client-side, dont worry.</p>
+    <p>Totally client-side, don't worry.</p>
   </footer>
 
   <template id="apiCardTemplate">
@@ -104,6 +104,36 @@
   <template id="commandDividerTemplate">
     <div class="card-divider"></div>
   </template>
+
+  <div id="codeModal" class="code-modal" hidden>
+    <div class="code-modal-backdrop"></div>
+    <div class="code-modal-content">
+      <div class="code-modal-header">
+        <div>
+          <span id="codeModalTitle" class="code-modal-title"></span>
+          <span class="code-modal-lang">bash</span>
+        </div>
+        <button type="button" class="code-modal-close" aria-label="Close">&times;</button>
+      </div>
+      <div class="code-modal-body">
+        <pre><code id="codeModalCode"></code></pre>
+      </div>
+      <div class="code-modal-footer">
+        <button id="codeModalCopy" type="button" class="code-modal-copy">
+          <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+            <path d="M9 3.75A2.25 2.25 0 0 1 11.25 1.5h1.5A2.25 2.25 0 0 1 15 3.75h2.25A2.25 2.25 0 0 1 19.5 6v12a2.25 2.25 0 0 1-2.25 2.25h-10.5A2.25 2.25 0 0 1 4.5 18V6A2.25 2.25 0 0 1 6.75 3.75H9Zm2.25-.75a.75.75 0 0 0-.75.75V4.5h3v-.75a.75.75 0 0 0-.75-.75h-1.5Zm-4.5 3a.75.75 0 0 0-.75.75v12c0 .414.336.75.75.75h10.5a.75.75 0 0 0 .75-.75V6.75a.75.75 0 0 0-.75-.75H6.75Z" fill="currentColor"/>
+          </svg>
+          Copy command
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <button id="backToTop" type="button" class="back-to-top" aria-label="Back to top" title="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
 
   <script src="assets/js/app.js" defer></script>
 </body>

@@ -254,7 +254,7 @@
                     "title": "Fetch remote config data",
                     "method": "POST",
                     "description": "",
-                    "template": "curl -X POST \"https://firebaseremoteconfig.googleapis.com:443/v1/projects/{{PROJECT_ID}}/namespaces/firebase:fetch\" -H \"X-Goog-Api-Key: {{GOOGLE_API_KEY}}\" -H \"Content-Type: application/json\" -d \u0027{\"appId\": \"{{APP_ID}}\",\"appInstanceId\": \"XD\"}\u0027"
+                    "template": "curl -X POST \u0027https://firebaseremoteconfig.googleapis.com:443/v1/projects/{{PROJECT_ID}}/namespaces/firebase:fetch\u0027 -H \u0027X-Goog-Api-Key: {{GOOGLE_API_KEY}}\u0027 -H \u0027Content-Type: application/json\u0027 -d \u0027{\"appId\": \"{{APP_ID}}\",\"appInstanceId\": \"XD\"}\u0027"
                 },
                 {
                     "title": "Fetch web config data",
@@ -280,13 +280,13 @@
                     "title": "Try to authenticate",
                     "method": "POST",
                     "description": "",
-                    "template": "curl -X POST \u0027https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key={{GOOGLE_API_KEY}}\u0027 -H \"X-Client-Version: Firefox/JsCore/7.15.5/FirebaseCore-web\" -H \"Content-Type: application/json\" -d \u0027{\"email\":\"test@gmail.com\",\"password\":\"teste\",\"returnSecureToken\":true}\u0027"
+                    "template": "curl -X POST \u0027https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key={{GOOGLE_API_KEY}}\u0027 -H \u0027X-Client-Version: Firefox/JsCore/7.15.5/FirebaseCore-web\u0027 -H \u0027Content-Type: application/json\u0027 -d \u0027{\"email\":\"test@gmail.com\",\"password\":\"teste\",\"returnSecureToken\":true}\u0027"
                 },
                 {
                     "title": "Register account",
                     "method": "POST",
                     "description": "",
-                    "template": "curl -X POST \u0027https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key={{GOOGLE_API_KEY}}\u0027 -H \"X-Client-Version: Firefox/JsCore/7.15.5/FirebaseCore-web\" -H \"Content-Type: application/json\" -d \u0027{\"email\":\"test@gmail.com\",\"password\":\"teste\",\"returnSecureToken\":true}\u0027"
+                    "template": "curl -X POST \u0027https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key={{GOOGLE_API_KEY}}\u0027 -H \u0027X-Client-Version: Firefox/JsCore/7.15.5/FirebaseCore-web\u0027 -H \u0027Content-Type: application/json\u0027 -d \u0027{\"email\":\"test@gmail.com\",\"password\":\"teste\",\"returnSecureToken\":true}\u0027"
                 }
             ]
         },
@@ -306,13 +306,13 @@
                     "title": "List models",
                     "method": "POST",
                     "description": "",
-                    "template": "curl -X POST \u0027https://generativelanguage.googleapis.com/v1/models?key={{GOOGLE_API_KEY}}\u0027"
+                    "template": "curl -X POST \u0027https://generativelanguage.googleapis.com/v1beta/models\u0027 -H \u0027x-goog-api-key: {{GOOGLE_API_KEY}}\u0027"
                 },
                 {
                     "title": "Generate a poem",
                     "method": "POST",
                     "description": "",
-                    "template": "curl -X POST \u0027https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key={{GOOGLE_API_KEY}}\u0027 -H \"Content-Type: application/json\" -d \u0027{\"contents\":[{\"parts\":[{\"text\":\"Write a poem about the ocean.\"}]}]}\u0027"
+                    "template": "curl -X POST \u0027https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key={{GOOGLE_API_KEY}}\u0027 -H \u0027Content-Type: application/json\u0027 -d \u0027{\"contents\":[{\"parts\":[{\"text\":\"Write a poem about the ocean.\"}]}]}\u0027"
                 }
             ]
         },
